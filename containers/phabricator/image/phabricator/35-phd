@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Start the Phabricator daemons
+pushd /srv/phabricator/phabricator
+sudo -u git bin/phd start
+
+if [ -e /config/script.phd ]; then
+    echo "Applying post-daemon script..."
+    sudo -u git /config/script.phd
+fi
+
+popd

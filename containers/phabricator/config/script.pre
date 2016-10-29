@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Set the name of the host running MySQL:
+./bin/config set mysql.host "mysql.code.etelej.com"
+
+# If MySQL is running on a non-standard port:
+#./bin/config set mysql.port 3306
+
+# Set the username for connecting to MySQL:
+./bin/config set mysql.user "root"
+
+# Set the password for connecting to MySQL:
+./bin/config set mysql.pass "$MYSQL_ROOT_PASSWORD"
+
+# Set the base URI that will be used to access Phabricator:
+./bin/config set phabricator.base-uri "https://code.etelej.com/"

@@ -1,0 +1,12 @@
+# Phabricator custom mysql conf.d .cnf file
+# As used by docker image etelej/phab-mysql:latest
+# by <peter@etelej.com>
+
+[mysqld]
+ft_boolean_syntax=' |-><()~*:""&^'
+
+sql_mode	            =STRICT_ALL_TABLES
+ft_stopword_file        =/etc/mysql/stopwords.txt
+ft_min_word_len	        =3
+innodb_buffer_pool_size =410m
+max_allowed_packet      =33554432
