@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Phabricator-dockerized by peteretelej</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Phabricator-dockerized</h1>
+        <h2>Phabricator, dockerized.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/peteretelej/phabricator-dockerized/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/peteretelej/phabricator-dockerized/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/peteretelej/phabricator-dockerized" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="phabricator-dockerized" class="anchor" href="#phabricator-dockerized" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Phabricator Dockerized</h1>
+
+<p><a href="http://unmaintained.tech/"><img src="http://unmaintained.tech/badge.svg" alt="No Maintenance Intended"></a></p>
+
+<p>Containerized Phabricator instance.</p>
+
+<p><strong>Disclaimer</strong>: This was built in Mar 2016, and powered code.etelej.com till 28 Oct 2016. Do not use as is.</p>
+
+<h2>
+<a id="docker-containers" class="anchor" href="#docker-containers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docker Containers</h2>
+
+<p>Phabricator was <em>dockerized</em> into containers for use at Code.Etelej.com. Facebook's Phabricator did not support Docker (and <a href="https://secure.phabricator.com/T6353">didn't plan to</a>).</p>
+
+<p>For effective use via Docker, the following customized images were built and used:</p>
+
+<ul>
+<li>Phabricator <a href="https://hub.docker.com/r/etelej/phabricator/">etelej/phabricator:201603</a>
+</li>
+<li>Phab-Mysql <a href="https://hub.docker.com/r/etelej/phab-mysql/">etelej/phab-mysql:5.7</a>
+</li>
+<li>Nginx</li>
+</ul>
+
+<h3>
+<a id="phabricator" class="anchor" href="#phabricator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Phabricator</h3>
+
+<p><code>phabricator</code> applications are in the phabricator container at <code>/srv/phabricator</code></p>
+
+<h4>
+<a id="phabricator-cli-example" class="anchor" href="#phabricator-cli-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Phabricator cli example:</h4>
+
+<p>To run the phabricator command <code>./bin/remove destroy @peter</code>:</p>
+
+<div class="highlight highlight-source-shell"><pre>docker <span class="pl-c1">exec</span> -it phabricator bash
+<span class="pl-c1">cd</span> /srv/phabricator/phabricator/bin
+./remove destroy @peter</pre></div>
+      </section>
+    </div>
+
+    
+  </body>
+</html>

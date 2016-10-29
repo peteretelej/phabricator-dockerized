@@ -1,0 +1,6 @@
+{
+  "name": "Phabricator-dockerized",
+  "tagline": "Phabricator, dockerized.",
+  "body": "# Phabricator Dockerized\r\n[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)\r\n\r\nContainerized Phabricator instance.\r\n\r\n__Disclaimer__: This was built in Mar 2016, and powered code.etelej.com till 28 Oct 2016. Do not use as is.\r\n\r\n## Docker Containers\r\nPhabricator was _dockerized_ into containers for use at Code.Etelej.com. Facebook's Phabricator did not support Docker (and [didn't plan to](https://secure.phabricator.com/T6353)).\r\n\r\nFor effective use via Docker, the following customized images were built and used:\r\n\r\n   - Phabricator [etelej/phabricator:201603](https://hub.docker.com/r/etelej/phabricator/)\r\n   - Phab-Mysql [etelej/phab-mysql:5.7](https://hub.docker.com/r/etelej/phab-mysql/)\r\n   - Nginx\r\n\r\n### Phabricator\r\n`phabricator` applications are in the phabricator container at `/srv/phabricator`\r\n\r\n#### Phabricator cli example:\r\nTo run the phabricator command `./bin/remove destroy @peter`:\r\n\r\n```bash\r\ndocker exec -it phabricator bash\r\ncd /srv/phabricator/phabricator/bin\r\n./remove destroy @peter\r\n```\r\n\r\n\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
